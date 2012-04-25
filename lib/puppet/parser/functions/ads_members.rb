@@ -16,7 +16,7 @@ module Puppet::Parser::Functions
     ldap.auth   lookupvar('activedirectory::aduser'), lookupvar('activedirectory::adpass')
     ldap.bind
     f = Net::LDAP::Filter.construct("(&(objectCategory=user)(memberof=#{group}))")
-    attribs = %w{samaccountname uidnumber gidnumber}
+    attribs = %w{samaccountname uidnumber gidnumber cn}
     members = ldap.search(:filter => f, :attributes => attribs)
 
     members.map do |u|

@@ -18,6 +18,7 @@ class activedirectory($adhost, $adport, $basedn, $aduser, $adpass) {
       ensure      => present,
       uid         => $name[uidnumber],
       gid         => $name[gidnumber],
+      comment     => $name[cn],
       managehome  => true,
     }
   }
