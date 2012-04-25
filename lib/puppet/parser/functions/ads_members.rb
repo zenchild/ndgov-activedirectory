@@ -7,7 +7,7 @@ module Puppet::Parser::Functions
   # @param [String] group the group name we want members of. This needs to be the full
   #   DN and not just a CN.
   # @return [Array<String>] an array of group members with their samaccountname 
-  newfunction(:ad_members, :type => :rvalue) do |args|
+  newfunction(:ads_members, :type => :rvalue) do |args|
     group = args[0]
     ldap      = Net::LDAP.new
     ldap.host = lookupvar('activedirectory::adhost')

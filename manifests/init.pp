@@ -13,7 +13,7 @@ class activedirectory($adhost, $adport, $basedn, $aduser, $adpass) {
   #     uidnumber       => 'uidnum',
   #     gidnumber       => 'gidnum'
   #   }
-  define ad_user() {
+  define ads_user() {
     user { $name[samaccountname]:
       ensure      => present,
       uid         => $name[uidnumber],
